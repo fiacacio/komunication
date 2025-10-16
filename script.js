@@ -2,9 +2,14 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        console.log('Menu toggle clicked'); // Debug
+        navMenu.classList.toggle('active');
+    });
+} else {
+    console.log('Menu elements not found:', { navToggle, navMenu }); // Debug
+}
 
 // Fechar menu ao clicar em um link
 document.querySelectorAll('.nav-menu a').forEach(link => {
