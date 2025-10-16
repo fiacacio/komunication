@@ -1,0 +1,15 @@
+{
+  "name": "komunication",
+  "version": "1.0.0",
+  "description": "Site institucional para a Komunication: comunicação, mídia digital e painéis de LED.",
+  "main": "convert-images.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.34.4"
+  }
+}
