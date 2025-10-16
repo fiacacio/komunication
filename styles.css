@@ -421,10 +421,6 @@ html {
         max-width: 100vw !important;
     }
     
-    /* Garantir que todos os elementos respeitem a largura */
-    .about-k-logo {
-        max-width: 80vw; /* Não ultrapassar 80% da largura da tela */
-    }
     
     /* Forçar todas as seções a respeitarem a largura */
     section {
@@ -874,18 +870,6 @@ html {
 /* Novo padrão de apresentação (efeito deck) */
 .polaroid.pos-0, .polaroid.pos-1, .polaroid.pos-2 { display: none; }
 
-/* K logo na seção sobre */
-.about-k-logo {
-    width: 300px;
-    height: auto;
-    opacity: 0.03; /* Transparência bem alta */
-    position: absolute;
-    top: 50%;
-    left: 50%; /* Centralizado */
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Atrás do texto */
-    animation: float 12s ease-in-out infinite; /* Parallax igual ao outro K */
-}
 
 /* Contact Section */
 .contact {
@@ -1377,8 +1361,7 @@ html {
         padding: 80px 16px 40px;
         margin: 10px;
         max-width: 520px;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(4px);
+        background: transparent; /* Igual ao desktop */
     }
 
     .hero-brand {
