@@ -300,15 +300,15 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// Efeito parallax suave nos círculos do hero
+// Efeito parallax suave nos ícones do hero (K)
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const heroCircles = document.querySelectorAll('.hero-circle');
-    heroCircles.forEach((circle, index) => {
-        const speedY = 0.12 + index * 0.03; // mais suave
-        const speedX = 0.02 + index * 0.01;
-        circle.style.transform = `translate(${scrolled * speedX}px, ${scrolled * speedY}px)`;
-    });
+    const heroIcon = document.querySelector('.hero-icon-main');
+    if (heroIcon) {
+        const speedY = 0.08; // mais suave e lento
+        const speedX = 0.02;
+        heroIcon.style.transform = `translate(${scrolled * speedX}px, ${scrolled * speedY}px)`;
+    }
 });
 
 // Lazy loading para imagens (se adicionadas futuramente)

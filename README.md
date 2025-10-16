@@ -1,13 +1,14 @@
-# Laura Lis Design de Interiores
+# Komunication LED
 
-Site institucional para escritório de arquitetura e design de interiores.
+Site institucional para a Komunication: comunicação, mídia digital e painéis de LED.
 
 ## 🎨 Design
 
 - **Cores principais:**
-  - Verde escuro: `#123C34` (RGB: 18, 60, 52)
-  - Rosa: `#E5BDAF` (RGB: 229, 189, 175)
-  - Branco papel: `#FFFFFF`
+  - Roxo médio: `#8E44AD`
+  - Roxo escuro: `#5E3370`
+  - Rosa vibrante: `#E91E63`
+  - Branco: `#FFFFFF`
 
 - **Tipografia:**
   - Títulos: Playfair Display (serif)
@@ -18,7 +19,7 @@ Site institucional para escritório de arquitetura e design de interiores.
 - Design responsivo para mobile e desktop
 - Navegação suave entre seções
 - Menu mobile com animação
-- Formulário de contato funcional
+- Formulário de contato (estático)
 - Animações de entrada para elementos
 - Efeito parallax nos elementos decorativos
 
@@ -43,7 +44,7 @@ Site institucional para escritório de arquitetura e design de interiores.
 ├── index.html          # Página principal
 ├── styles.css          # Estilos CSS
 ├── script.js           # JavaScript
-├── portfolio.js        # Lógica da página de portfólio e modal
+├── portfolio.html       # Página de Parceiros
 ├── convert-images.js   # Conversor para WebP e variantes responsivas
 └── README.md           # Documentação
 ```

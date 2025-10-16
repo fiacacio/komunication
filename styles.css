@@ -40,6 +40,7 @@ body {
     z-index: 1000;
     padding: 0.4rem 0; /* barra mais fina mantendo o tamanho do logo */
     transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
 }
 
 .nav {
@@ -146,6 +147,28 @@ body {
     background: transparent;
     position: relative;
     overflow: hidden;
+}
+
+/* Fundo com imagem e transparência no hero */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('background.jpg') center/cover no-repeat;
+    opacity: 0.18; /* transparência do background */
+    z-index: 0;
+}
+
+/* Degradê de transição no final do hero */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(94, 51, 112, 0.8) 100%);
+    z-index: 1;
 }
 
 /* Hero Carousel */
@@ -258,7 +281,7 @@ body {
 .hero-image {
     flex: 1;
     position: relative;
-    height: 500px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,32 +294,22 @@ body {
     opacity: 0.5;
 }
 
-.hero-circle-1 {
-    width: 200px;
-    height: 200px;
-    background: var(--primary-color);
-    bottom: 80px;
-    right: 60px;
-    animation: float 6s ease-in-out infinite;
-}
+.hero-circle-1 { display:none; }
 
-.hero-circle-2 {
-    width: 150px;
-    height: 150px;
-    background: var(--primary-color);
-    bottom: 200px;
-    right: 120px;
-    animation: float 6s ease-in-out infinite reverse;
-}
+.hero-circle-2 { display:none; }
 
-.hero-circle-3 {
-    width: 120px;
-    height: 120px;
-    background: var(--secondary-color);
-    bottom: 120px;
-    right: 280px;
-    transform: none;
-    animation: float 4s ease-in-out infinite;
+.hero-circle-3 { display:none; }
+
+.hero-icon { position: absolute; pointer-events: none; }
+.hero-icon-main { 
+    height: 85vh; 
+    width: auto; 
+    opacity: 0.10; 
+    position: absolute;
+    top: 15%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    animation: float 12s ease-in-out infinite; 
 }
 
 @keyframes float {
