@@ -129,6 +129,11 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
+.nav-social {
+    display: flex;
+    gap: 12px; /* Espaçamento entre Instagram e WhatsApp */
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -369,6 +374,7 @@ body {
     .about-k-logo {
         max-width: 80vw; /* Não ultrapassar 80% da largura da tela */
     }
+    
 }
 
 @keyframes float {
