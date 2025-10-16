@@ -302,13 +302,13 @@ body {
 
 .hero-icon { position: absolute; pointer-events: none; }
 .hero-icon-main { 
-    height: 85vh; 
+    height: 90vh; 
     width: auto; 
     opacity: 0.10; 
     position: absolute;
-    top: 5%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+    top: -36vh; 
+    right: 3%; 
+    transform: none;
     animation: float 12s ease-in-out infinite;
 }
 
@@ -755,11 +755,8 @@ body {
 /* Contact Section */
 .contact {
     padding: 80px 0;
-    background: var(--background-light);
-    background-image: url('marmore_verde.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: transparent;
+    background-image: none;
     position: relative;
 }
 
@@ -770,8 +767,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--background-light);
-    opacity: 0.7;
+    background: transparent;
+    opacity: 0;
     z-index: 1;
 }
 
@@ -1454,7 +1451,7 @@ body {
 .coming-soon,
 .partner-placeholder,
 .contact-form,
-.contact-info { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); }
+.contact-info { background: transparent; border: none; }
 
 .service-card h3,
 .portfolio-item h3 { color: var(--white); }
@@ -1477,10 +1474,11 @@ body {
 
 /* Cartões internos de contato arredondados e legíveis */
 .contact-item {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 14px;
     padding: 16px;
+    backdrop-filter: blur(4px);
 }
 .contact-item a { color: #FFFFFF; }
 .contact-item a:hover { color: var(--secondary-color); }
