@@ -21,12 +21,17 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
+    max-width: 100vw; /* Largura máxima = largura do viewport */
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding na largura total */
 }
 
 /* Header */
@@ -225,13 +230,12 @@ body {
     margin: 20px;
 }
 
-.hero-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+.hero-brand-logo {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .hero-title {
@@ -310,6 +314,61 @@ body {
     right: 3%; 
     transform: none;
     animation: float 12s ease-in-out infinite;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    /* Garantir que tudo fique dentro da tela */
+    * {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        padding: 0 16px; /* Padding menor no mobile */
+        width: 100%;
+    }
+    
+    .hero-icon-main {
+        height: 50vh; /* Menor no mobile */
+        top: 20vh; /* Posição mais baixa */
+        right: -5%; /* Menos à direita para não cortar */
+        opacity: 0.08; /* Mais transparente */
+        max-width: 100vw; /* Não ultrapassar a largura da tela */
+    }
+    
+    /* Background mais visível em tablets */
+    .hero::before {
+        opacity: 0.20; /* Mais visível em tablets */
+        background-size: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Garantir responsividade total em telas pequenas */
+    .container {
+        padding: 0 12px; /* Padding ainda menor */
+    }
+    
+    .hero-icon-main {
+        height: 40vh; /* Ainda menor em telas muito pequenas */
+        top: 25vh;
+        right: -10%; /* Menos à direita */
+        opacity: 0.06; /* Muito sutil */
+        max-width: 100vw; /* Não ultrapassar a largura da tela */
+    }
+    
+    /* Ajustar background no mobile */
+    .hero::before {
+        background-size: cover; /* Cobre toda a área no mobile */
+        opacity: 0.25; /* Mais visível no mobile */
+        background-position: center; /* Centraliza a imagem */
+    }
+    
+    /* Garantir que todos os elementos respeitem a largura */
+    .about-k-logo {
+        max-width: 80vw; /* Não ultrapassar 80% da largura da tela */
+    }
 }
 
 @keyframes float {
@@ -751,6 +810,19 @@ body {
 
 /* Novo padrão de apresentação (efeito deck) */
 .polaroid.pos-0, .polaroid.pos-1, .polaroid.pos-2 { display: none; }
+
+/* K logo na seção sobre */
+.about-k-logo {
+    width: 300px;
+    height: auto;
+    opacity: 0.03; /* Transparência bem alta */
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Centralizado */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Atrás do texto */
+    animation: float 12s ease-in-out infinite; /* Parallax igual ao outro K */
+}
 
 /* Contact Section */
 .contact {
@@ -1221,6 +1293,16 @@ body {
 
     .nav-toggle {
         display: flex;
+        order: 3; /* Garante que fica à direita */
+        margin-left: auto; /* Empurra para a direita */
+    }
+    
+    .nav-social {
+        order: 2; /* Instagram fica no meio */
+    }
+    
+    .nav-menu {
+        order: 1; /* Menu fica à esquerda quando aberto */
     }
 
     .hero {
@@ -1407,8 +1489,11 @@ body {
 }
 
 /* Hero com títulos em branco sobre fundo colorido */
-.hero-title,
-.hero-brand { color: var(--white); }
+.hero-title { color: var(--white); }
+.hero-brand-logo { 
+    max-width: 450px; 
+    margin-bottom: 0.8rem; 
+}
 .hero-slogan { color: var(--white); opacity: 0.95; font-style: normal; }
 .hero-subtitle { color: rgba(255,255,255,0.9); }
 
