@@ -124,22 +124,26 @@ html {
 
 .nav-social a {
     color: var(--white);
-    transition: color 0.3s ease;
-    padding: 8px;
-    border-radius: 50%;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-social a:hover {
     color: var(--secondary-color);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(233, 30, 99, 0.2);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .nav-social {
     display: flex;
-    gap: 12px; /* Espaçamento entre Instagram e WhatsApp */
+    gap: 16px; /* Espaçamento maior entre Instagram e WhatsApp */
 }
 
 .nav-toggle {
@@ -325,8 +329,7 @@ html {
     top: 20%;
     right: 5%;
     z-index: 2;
-    animation: float 15s ease-in-out infinite;
-    transform: rotate(-5deg);
+    animation: float-reverse 18s ease-in-out infinite; /* Movimento invertido e mais lento */
     border-radius: 15px;
     /* box-shadow removido completamente */
     box-shadow: none !important;
@@ -349,8 +352,13 @@ html {
     top: -36vh; 
     right: 3%; 
     transform: none;
-    animation: float 12s ease-in-out infinite;
+    animation: float 10s ease-in-out infinite; /* Movimento mais rápido e diferente */
     z-index: 1;
+}
+
+/* Esconder nav-social-mobile no desktop */
+.nav-social-mobile {
+    display: none;
 }
 
 /* Responsivo para mobile */
@@ -376,23 +384,24 @@ html {
     .hero {
         width: 100vw;
         max-width: 100vw;
-        overflow: hidden;
+        overflow: visible; /* Permitir que o painel apareça */
     }
     
     .hero-content {
         width: 100%;
         max-width: 100vw;
-        padding: 160px 16px 40px !important; /* Mais espaço no topo */
+        padding: 80px 16px 40px !important; /* Reduzido de 160px para 80px - mais próximo do topo */
         background: transparent !important; /* Forçar transparente no mobile */
     }
     
     .hero-panel {
-        height: 31.25vh; /* Aumentado de 25vh para 31.25vh (+25%) */
-        top: 15%; /* Posição ajustada */
-        right: 2%; /* Menos à direita */
-        opacity: 0.6; /* Mais transparente */
+        height: 46.875vh; /* Aumentado de 37.5vh para 46.875vh (+25% adicional) */
+        top: -50%; /* Descido de -90% para -50% - mais visível */
+        right: 80%; /* Movido mais 60% para a direita (20% + 60%) */
+        opacity: 0.7; /* Levemente mais visível */
         transform: rotate(-3deg); /* Rotação menor */
         max-width: 80vw; /* Não ultrapassar a largura da tela */
+        z-index: 100; /* Garantir que apareça acima de tudo */
     }
 
     .hero-icon-main {
@@ -429,23 +438,24 @@ html {
     .hero {
         width: 100vw !important;
         max-width: 100vw !important;
-        overflow: hidden !important;
+        overflow: visible !important; /* Permitir que o painel apareça */
     }
     
     .hero-content {
         width: 100% !important;
         max-width: 100vw !important;
-        padding: 180px 12px 40px !important; /* Ainda mais espaço no topo */
+        padding: 100px 12px 40px !important; /* Reduzido de 180px para 100px - mais próximo do topo */
         background: transparent !important; /* Forçar transparente no mobile pequeno */
     }
     
     .hero-panel {
-        height: 25vh; /* Aumentado de 20vh para 25vh (+25%) */
-        top: 10%; /* Posição mais alta */
-        right: 1%; /* Quase na borda */
-        opacity: 0.5; /* Mais transparente */
+        height: 37.5vh; /* Aumentado de 30vh para 37.5vh (+25% adicional) */
+        top: -45%; /* Descido de -85% para -45% - mais visível */
+        right: 80%; /* Movido mais 60% para a direita (20% + 60%) */
+        opacity: 0.6; /* Levemente mais visível */
         transform: rotate(-2deg); /* Rotação mínima */
         max-width: 70vw; /* Não ultrapassar a largura da tela */
+        z-index: 100; /* Garantir que apareça acima de tudo */
     }
 
     .hero-icon-main {
@@ -477,6 +487,11 @@ html {
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
+}
+
+@keyframes float-reverse {
+    0%, 100% { transform: translateY(0px) rotate(-5deg); }
+    50% { transform: translateY(20px) rotate(-5deg); }
 }
 
 /* Sections */
@@ -1392,7 +1407,7 @@ html {
     }
 
     .nav-social-mobile {
-        display: flex;
+        display: flex; /* Mostrar apenas no mobile */
         justify-content: center;
         gap: 2rem;
         padding: 1.5rem 0;
