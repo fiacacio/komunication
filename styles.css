@@ -396,11 +396,12 @@ html {
     
     .hero-panel {
         height: 46.875vh; /* Aumentado de 37.5vh para 46.875vh (+25% adicional) */
-        top: -50%; /* Descido de -90% para -50% - mais visível */
-        right: 80%; /* Movido mais 60% para a direita (20% + 60%) */
+        bottom: 0; /* Posicionado na parte inferior do hero-content */
+        top: auto; /* Remover top para que bottom funcione */
+        left: 50%; /* Centralizado horizontalmente */
+        transform: translateX(-50%) rotate(-3deg); /* Centralizar e rotacionar */
         opacity: 0.7; /* Levemente mais visível */
-        transform: rotate(-3deg); /* Rotação menor */
-        max-width: 80vw; /* Não ultrapassar a largura da tela */
+        max-width: 90vw; /* Aumentado para aparecer completamente */
         z-index: 100; /* Garantir que apareça acima de tudo */
     }
 
@@ -450,11 +451,12 @@ html {
     
     .hero-panel {
         height: 37.5vh; /* Aumentado de 30vh para 37.5vh (+25% adicional) */
-        top: -45%; /* Descido de -85% para -45% - mais visível */
-        right: 80%; /* Movido mais 60% para a direita (20% + 60%) */
+        bottom: 0; /* Posicionado na parte inferior do hero-content */
+        top: auto; /* Remover top para que bottom funcione */
+        left: 50%; /* Centralizado horizontalmente */
+        transform: translateX(-50%) rotate(-2deg); /* Centralizar e rotacionar */
         opacity: 0.6; /* Levemente mais visível */
-        transform: rotate(-2deg); /* Rotação mínima */
-        max-width: 70vw; /* Não ultrapassar a largura da tela */
+        max-width: 85vw; /* Aumentado para aparecer completamente */
         z-index: 100; /* Garantir que apareça acima de tudo */
     }
 
