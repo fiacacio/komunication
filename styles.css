@@ -1336,6 +1336,52 @@ html {
         padding: 2rem 0;
     }
 
+    .nav-menu a {
+        color: var(--primary-color) !important; /* Texto roxo no menu mobile */
+        font-weight: 600;
+        padding: 1rem 0;
+        display: block;
+        border-bottom: 1px solid rgba(142, 68, 173, 0.1);
+    }
+
+    .nav-menu a:hover {
+        color: var(--secondary-color) !important; /* Rosa no hover */
+        background-color: rgba(233, 30, 99, 0.05);
+    }
+
+    .nav-social-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1.5rem 0;
+        border-bottom: 2px solid rgba(142, 68, 173, 0.2);
+        margin-bottom: 1rem;
+    }
+
+    .nav-social-mobile a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary-color) !important;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        background-color: rgba(142, 68, 173, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .nav-social-mobile a:hover {
+        background-color: var(--secondary-color) !important;
+        color: var(--white) !important;
+        transform: translateY(-2px);
+    }
+
+    .nav-social-mobile svg {
+        width: 20px;
+        height: 20px;
+    }
+
     .nav-menu.active {
         left: 0;
     }
@@ -1346,6 +1392,11 @@ html {
         margin-left: auto; /* Empurra para a direita */
         z-index: 1001; /* Garantir que fica acima de outros elementos */
         cursor: pointer; /* Mostrar que é clicável */
+        padding: 10px; /* Área de toque maior */
+        position: relative; /* Para garantir z-index */
+        background: transparent; /* Garantir que não há fundo bloqueando */
+        border: none; /* Remover qualquer borda */
+        outline: none; /* Remover outline */
     }
     
     .nav-social {
@@ -1580,6 +1631,35 @@ body {
 .services, .portfolio, .about, .contact { background: transparent; background-image: none; }
 .services::before, .portfolio::before, .about::before, .contact::before { display: none; }
 
+/* Separação entre seções */
+.portfolio {
+    margin-top: 3rem;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 3;
+}
+
+.services {
+    margin-top: 2rem;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.about {
+    margin-top: 2rem;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.contact {
+    margin-top: 2rem;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
 /* Cartões e caixas com vidro translúcido */
 .service-card,
 .portfolio-item,
@@ -1624,3 +1704,26 @@ body {
 
 /* Caixa translúcida também no Entre em Contato */
 .contact-content { background: transparent; border: none; border-radius: 0; padding: 0; gap: 24px; }
+
+/* Separação entre seções no mobile */
+@media (max-width: 768px) {
+    .portfolio {
+        margin-top: 2rem;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .services {
+        margin-top: 1.5rem;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .about {
+        margin-top: 1.5rem;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact {
+        margin-top: 1.5rem;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    }
+}
