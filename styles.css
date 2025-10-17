@@ -318,6 +318,29 @@ html {
 .hero-circle-3 { display:none; }
 
 .hero-icon { position: absolute; pointer-events: none; }
+.hero-panel {
+    height: 50vh; /* Aumentado de 40vh para 50vh (+25%) */
+    opacity: 0.8;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    z-index: 2;
+    animation: float 15s ease-in-out infinite;
+    transform: rotate(-5deg);
+    border-radius: 15px;
+    /* box-shadow removido completamente */
+    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    outline: none;
+    /* Melhorar integração com o fundo */
+    mix-blend-mode: multiply; /* Remove fundos brancos */
+    filter: contrast(1.2) brightness(1.1) saturate(1.1);
+    /* Tentar remover contornos brancos */
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+}
+
 .hero-icon-main { 
     height: 90vh; 
     width: auto; 
@@ -327,6 +350,7 @@ html {
     right: 3%; 
     transform: none;
     animation: float 12s ease-in-out infinite;
+    z-index: 1;
 }
 
 /* Responsivo para mobile */
@@ -362,6 +386,15 @@ html {
         background: transparent !important; /* Forçar transparente no mobile */
     }
     
+    .hero-panel {
+        height: 31.25vh; /* Aumentado de 25vh para 31.25vh (+25%) */
+        top: 15%; /* Posição ajustada */
+        right: 2%; /* Menos à direita */
+        opacity: 0.6; /* Mais transparente */
+        transform: rotate(-3deg); /* Rotação menor */
+        max-width: 80vw; /* Não ultrapassar a largura da tela */
+    }
+
     .hero-icon-main {
         height: 50vh; /* Menor no mobile */
         top: 20vh; /* Posição mais baixa */
@@ -406,6 +439,15 @@ html {
         background: transparent !important; /* Forçar transparente no mobile pequeno */
     }
     
+    .hero-panel {
+        height: 25vh; /* Aumentado de 20vh para 25vh (+25%) */
+        top: 10%; /* Posição mais alta */
+        right: 1%; /* Quase na borda */
+        opacity: 0.5; /* Mais transparente */
+        transform: rotate(-2deg); /* Rotação mínima */
+        max-width: 70vw; /* Não ultrapassar a largura da tela */
+    }
+
     .hero-icon-main {
         height: 40vh; /* Ainda menor em telas muito pequenas */
         top: 25vh;
