@@ -1314,8 +1314,8 @@ html {
     .header { padding: 0.6rem 0; }
     .nav { padding-left: 20px; padding-right: 16px; }
     .nav-menu { top: 64px; }
-    /* Garante que o slide ocupe bem o viewport em mobile */
-    .hero { min-height: 80vh; }
+    /* Hero ocupa toda a tela no mobile para máximo impacto */
+    .hero { min-height: 100vh; }
     .hero-carousel { height: 100%; }
     .carousel-slide { height: 100%; }
     .carousel-slide img { object-fit: cover; object-position: center; }
@@ -1549,6 +1549,10 @@ html {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        min-height: 100vh;
+    }
+    
     .hero-brand {
         font-size: 1.8rem;
     }
